@@ -41,3 +41,17 @@ hook_chat_command("trapplatform", "- triggers trap", function()
     trigger_platform_trap()
     return true
 end)
+
+hook_chat_command("tp", "- tps player to specified coordinates", function(msg)
+    local mario = gMarioStates[0]
+    local positions = split(msg, ",")
+    local x = tonumber(positions[1])
+    local y = tonumber(positions[2])
+    local z = tonumber(positions[3])
+    vec3f_set(mario.pos, x, y, z)
+    vec3f_set(mario.vel, 0, 0, 0)
+    mario.forwardVel = 0
+    mario.faceAngle.y = 0
+    set_mario_action(mario, ACT_FREEFALL, 0)
+    return true
+end)
