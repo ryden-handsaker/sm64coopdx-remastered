@@ -37,6 +37,8 @@ local function on_mario_interact(m, obj, interact_type, interact_value)
         if punching then
             spawn_goombas(-5160, 83, 5986, 100)
         end
+    elseif id == id_bhvExclamationBox then
+        djui_chat_message_create("hit exclamation")
     end
 end
 

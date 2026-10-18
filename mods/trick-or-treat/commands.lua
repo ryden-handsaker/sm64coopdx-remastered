@@ -36,3 +36,8 @@ hook_chat_command("platform", "- spawns platform", function()
     create_platform()
     return true;
 end)
+
+hook_chat_command("trapplatform", "- triggers trap", function()
+    trigger_platform_trap()
+    return true
+end)
